@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Prinshu ❤️</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: linear-gradient(135deg, #170b30, #57234f, #bd547b);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 30px 18px;
+  max-width: 650px;
+  margin: auto;
+}
+
+h1 {
+  color: #ffcf70;
+  font-size: 35px;
+  margin: 35px 0 20px;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 8px #ff8cae; }
+  to { text-shadow: 0 0 25px #ffd36e; }
+}
+
+.heart {
+  font-size: 35px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.3); }
+}
+
+.card {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 22px;
+  padding: 25px 18px;
+  margin: 25px 0;
+  box-shadow: 0 8px 25px #0005;
+}
+
+p {
+  line-height: 1.9;
+  font-size: 17px;
+}
+
+h2 {
+  color: #ffd479;
+  margin-bottom: 18px;
+}
+
+img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 20px;
+  border: 4px solid #ffd479;
+  margin: 15px auto;
+  display: block;
+  box-shadow: 0 5px 25px #0007;
+}
+
+button {
+  background: linear-gradient(45deg, #ffb347, #ff5e91);
+  color: white;
+  border: none;
+  padding: 15px 28px;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.wish {
+  color: #ffe3a6;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+footer {
+  padding: 30px 10px;
+  color: #ffd479;
+  font-size: 18px;
+}
+
+.balloon {
+  position: fixed;
+  bottom: -100px;
+  font-size: 35px;
+  animation: float 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-120vh);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="heart">❤️ 🎉 ❤️</div>
+
+  <h1>Happy Birthday<br>Dear Prinshu</h1>
+
+  <p>Today is all about you! 🎂</p>
+
+  <button onclick="showCard()">
+    Open Your Birthday Surprise 💝
+  </button>
+
+  <div id="surprise" class="hidden">
+
+    <div class="card">
+      <h2>💖 A Special Message 💖</h2>
+
+      <p>
+        Kabhi kabhi Allah Ta'ala hamari zindagi mein
+        kuch aise log bhejte hain jo hamare liye
+        bahut special ban jaate hain. Aap bhi unhi
+        mein se ek hain. Allah Ta'ala ne aapko
+        Nayub ki zindagi mein bheja hai, iske liye
+        dil se thank you. ❤️
+        <br><br>
+        Thank you mujhe itna support karne ke liye,
+        itna pyaar dene ke liye aur har waqt saath
+        dene ke liye. Aapki presence mere liye
+        bahut मायने rakhti hai.
+        <br><br>
+        Bas hamesha aise hi khush rahiye.
+        Aap meri duaon mein hamesha rahenge. 🥹❤️
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>✨ Birthday Boy ✨</h2>
+
+      <!-- Apni photo ka naam birthday-boy.jpg rakhein -->
+      <img src="birthday-boy.jpg" alt="Birthday Boy">
+
+      <p class="wish">
+        The most special person today! ❤️
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>🎁 My Birthday Wishes 🎁</h2>
+
+      <p>
+        May Allah bless you with endless happiness,
+        good health, success and peace.
+        <br><br>
+        Aapki har dua qubool ho,
+        aapke har sapne poore hon,
+        aur aapki zindagi hamesha
+        khushiyon se bhari rahe.
+        <br><br>
+        Keep smiling, keep shining!
+        You deserve all the happiness in the world. ❤️
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>🎂 Let's Cut The Cake! 🎂</h2>
+
+      <!-- Fictional cake-cutting image -->
+      <img src="cake-cutting.jpg"
+           alt="Birthday Cake Celebration">
+
+      <p class="wish">
+        Make a wish, Prinshu! 🥳
+        <br>
+        Happy Birthday Once Again! ❤️
+      </p>
+    </div>
+
+    <footer>
+      Made with lots of love ❤️
+      <br>
+      From Nayub 💌
+    </footer>
+
+  </div>
+</div>
+
+<script>
+function showCard() {
+  document.getElementById("surprise").style.display = "block";
+  document.querySelector("button").style.display = "none";
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+for (let i = 0; i < 15; i++) {
+  let balloon = document.createElement("div");
+  balloon.className = "balloon";
+  balloon.innerHTML = ["🎈","❤️","✨","🎉"][i % 4];
+  balloon.style.left = Math.random() * 100 + "vw";
+  balloon.style.animationDelay = Math.random() * 8 + "s";
+  document.body.appendChild(balloon);
+}
+</script>
+
+</body>
+</html>
